@@ -80,8 +80,8 @@
 4. В меню `Appearance → Customize` настроила:
    1. заголовок и логотип сайта,
 
-    ![alt text](img/image-17.png)
     ![alt text](img/image-16.png)
+    ![alt text](img/image-33.png)
    2. цветовую схему
 
     ![alt text](img/image-19.png)
@@ -98,7 +98,7 @@
 Проверила, как он работает. Добавила небольшую запись и посмотрела как она отображается.
 
 ![alt text](img/image-21.png)
-![alt text](img/image-24.png)
+![alt text](img/image-22.png)
 
    2. плагин Contact Form 7 (для добавления формы обратной связи).
 Добавила форму обратной связи
@@ -124,7 +124,7 @@
 2. Создала несколько записей в блоге с разным контентом (текст, изображения).
 3. Проверила, как отображается контент на сайте.
 
-![alt text](img/img/image-28.png)
+![alt text](img/image-28.png)
 ![alt text](img/image-31.png)
 ![alt text](img/image-29.png)
 

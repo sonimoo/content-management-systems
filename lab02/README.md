@@ -13,56 +13,77 @@
 
 1. Имеется установленный XAMPP 
 2. Запущены модули Apache и MySQL.
+
 ![alt text](img/image.png)
+
 3. Убедилась, что `http://localhost` открывается.
+
 ![alt text](img/image-1.png)
+
 3. В `phpMyAdmin` создала новую базу данных, `wp_lab2`.
+
 ![alt text](img/image-2.png)
+
 В последствии таблицы создались автоматически
+
 ![alt text](img/image-30.png)
 
 ### Шаг 2. Установка WordPress
 
-1. Скачиваю WordPress с wordpress.org.
-*поблагодарили что скачала, приятно*
+1. Скачиваю WordPress с wordpress.org.  *поблагодарили, что скачала, приятно*
+
 ![alt text](img/image-3.png)
 
 2. Распаковала архив в папку `htdocs`.
+
 ![alt text](img/image-4.png)
+
 3. В браузере открываю `http://localhost/wp_lab2` и прохожу процесс установки.
 
 ![alt text](img/image-5.png)
 
 Ввела данные базы данных
+
 ![alt text](img/image-6.png)
 
 После проверки базы WordPress открыл страницу с настройками сайта.
+
 ![alt text](img/image-7.png)
 
 После входа открылась админ-панель WordPress.
+
 ![alt text](img/image-8.png)
 
 ### Шаг 3. Первоначальные настройки сайта
 
 1. В админ-панели перешла в раздел `Settings → General`. Изменила название сайта и часовой пояс.
+
 ![alt text](img/image-11.png)
 ![alt text](img/image-12.png)
 
 2. В разделе `Settings → Permalinks` установила вариант `Post name` для удобных ссылок.
+
 ![alt text](img/image-13.png)
 
 ### Шаг 4. Работа с темами
 
 1. Открыла раздел `Appearance → Themes`.
 2. Установмла новую тему из официального каталога («Astra»).
+
 ![alt text](img/image-14.png)
+
 3. Активировала тему и вижу, что изменился внешний вид сайта.
+
 ![alt text](img/image-15.png)
+![alt text](img/image-32.png)
+
 4. В меню `Appearance → Customize` настроила:
    1. заголовок и логотип сайта,
-   ![alt text](img/image-17.png)
+
+    ![alt text](img/image-17.png)
     ![alt text](img/image-16.png)
    2. цветовую схему
+
     ![alt text](img/image-19.png)
     ![alt text](img/image-18.png)
 
@@ -71,27 +92,38 @@
 1. Перешла в раздел `Plugins → Add New`.
 2. Установила и активировала:
    1. плагин Classic Editor (для классического редактора записей);
+
 ![alt text](img/image-20.png)
+
 Проверила, как он работает. Добавила небольшую запись и посмотрела как она отображается.
+
 ![alt text](img/image-21.png)
 ![alt text](img/image-24.png)
 
    2. плагин Contact Form 7 (для добавления формы обратной связи).
 Добавила форму обратной связи
+
 ![alt text](img/image-23.png)
+
 получила шорткод формы
+```
 [contact-form-7 id="77e5aa4" title="Форма обратной связи"]
+```
 
 3. В разделе `Plugins → Installed Plugins` деактивировала `Contact Form 7`, пропал из бокового меню.
+
 ![alt text](img/image-25.png)
 
 ### Шаг 6. Создание контента
 
 1. Создала простую страницу «Контакты» и вставьте на неё форму обратной связи.
+
 ![alt text](img/image-26.png)
 ![alt text](img/image-27.png)
+
 2. Создала несколько записей в блоге с разным контентом (текст, изображения).
 3. Проверила, как отображается контент на сайте.
+
 ![alt text](img/img/image-28.png)
 ![alt text](img/image-31.png)
 ![alt text](img/image-29.png)

@@ -15,7 +15,7 @@
 2. Создала директорию для своей темы, `my-theme`.
 3. Включила отладку в `wp-config.php`, установив `define('WP_DEBUG', true);`.
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 `define('WP_DEBUG', true);` позволяет отслеживать возможные ошибки при разработке и тестировании темы.
 
@@ -26,8 +26,8 @@
 3. Создала файл [index.php](my-theme/index.php) - главный шаблон темы. Для начала и добавила в него базовую HTML-структуру.
 
 4. Проверила, что тема появилась, активировала
-![alt text](image-1.png)
-![alt text](image-2.png)
+![alt text](img/image-1.png)
+![alt text](img/image-2.png)
 
 ### Шаг 3. Общие части шаблонов
 
@@ -35,14 +35,14 @@
 2. Создала файл [footer.php](my-theme/footer.php) и перенесла туда код подвала сайта.
 3. В [index.php](my-theme/index.php) подключила `header.php` и `footer.php` с помощью функций `get_header()` и `get_footer()`.
 4. На главной странице вывела список последних записей (_5 штук_) с помощью цикла WordPress.
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 ### Шаг 4. Файл функций
 
 1. Создала файл [functions.php](my-theme/functions.php) в папке темы.
 2. В `functions.php` добавила функцию для подключения стилей темы с помощью `wp_enqueue_style()`.
 
-![alt text](image-4.png)
+![alt text](img/image-4.png)
 
 ### Шаг 5. Дополнительные шаблоны
 
@@ -55,14 +55,14 @@
 ### Шаг 6. Стилизация темы
 
 Добавила стили для основных элементов темы (шапка, подвал, контент, боковая панель).
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-7.png)
+![alt text](img/image-5.png)
+![alt text](img/image-6.png)
+![alt text](img/image-7.png)
 
 ### Шаг 7. Скриншот темы
 
 Добавила в папку темы файл [screenshot.png](my-theme/screenshot.png) - изображение-превью темы (размер 1200x900px).
-![alt text](image-8.png)
+![alt text](img/image-8.png)
 
 ### Шаг 8. Активация темы
 

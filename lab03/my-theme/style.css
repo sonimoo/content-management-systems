@@ -1,0 +1,280 @@
+/*
+Theme Name: My Theme
+Author: Sofia Calincova
+Description: Простая тема WordPress для лабораторной работы №3
+Version: 1.0
+Text Domain: my-theme
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #f8f8f6;
+    background-image: url("bg.png");
+
+    background-repeat: repeat;
+    background-size: 500px;
+
+    color: #1f2328;
+    line-height: 1.6;
+}
+/* Шапка */
+.site-header {
+    background: #2b3036;
+    color: #f5f7fa;
+    padding: 18px 24px;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Макет */
+.container {
+    display: flex;
+    width: 100%;
+    min-height: calc(100vh - 72px);
+    align-items: stretch;
+}
+
+/* Боковая панель */
+.sidebar {
+    width: 240px;
+    min-width: 240px;
+    background: #1f2328;
+    padding: 28px 18px;
+}
+
+.sidebar-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    margin: 0 0 10px 0;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 14px 18px;
+    color: #f5f7fa;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+    background: #353b43;
+}
+
+.sidebar-nav li.active a {
+    background: #4a525c;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Контент */
+.content {
+    flex: 1;
+    padding: 40px 36px;
+    background: transparent;
+}
+
+/* Карточки */
+.post,
+.comments-area,
+.archive-header,
+.page-content-block {
+    max-width: 860px;
+    margin: 0 auto 28px auto;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 28px rgba(31, 35, 40, 0.08);
+    border: 1px solid #dde1e6;
+}
+
+/* Заголовки */
+.content h2,
+.content h3,
+.post h2,
+.post h3 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #1f2328;
+    line-height: 1.2;
+}
+
+.post h2,
+.post h3 {
+    font-size: 26px;
+}
+
+/* Текст */
+.content p,
+.post p {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: #3a4048;
+}
+
+/* Ссылки */
+.content a,
+.post a {
+    color: #2f5f9d;
+    text-decoration: none;
+}
+
+.content a:hover,
+.post a:hover {
+    text-decoration: underline;
+}
+
+/* Дата */
+.post small {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 6px 12px;
+    background: #eef1f4;
+    color: #5a6572;
+    border-radius: 999px;
+    font-size: 13px;
+}
+
+/* Изображения */
+.content img,
+.post img,
+.page-content-block img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 360px;
+    object-fit: contain;
+    margin: 20px auto;
+    border-radius: 14px;
+}
+
+/* Разделители */
+hr {
+    border: none;
+    border-top: 1px solid #e1e5e9;
+    margin: 24px 0;
+}
+
+/* Комментарии */
+.comments-area h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #1f2328;
+}
+
+.comments-area ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.comments-area li {
+    margin-bottom: 14px;
+    padding: 16px 18px;
+    background: #f6f7f9;
+    border: 1px solid #e3e6ea;
+    border-radius: 14px;
+}
+
+.comments-area .comment-author {
+    font-weight: 700;
+    color: #1f2328;
+}
+
+.comments-area .comment-meta {
+    font-size: 13px;
+    color: #6b7480;
+    margin-bottom: 8px;
+}
+
+.comments-area p {
+    margin: 0;
+}
+
+/* Форма комментариев */
+.comment-form {
+    margin-top: 24px;
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #1f2328;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    border: 1px solid #d8dde3;
+    border-radius: 12px;
+    background: #ffffff;
+    font-size: 15px;
+    color: #1f2328;
+}
+
+.comment-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+    outline: none;
+    border-color: #67717d;
+    box-shadow: 0 0 0 3px rgba(103, 113, 125, 0.12);
+}
+
+.comment-form .submit {
+    background: #2b3036;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.comment-form .submit:hover {
+    background: #3a4048;
+}
+
+/* Подвал */
+.site-footer {
+    background: #2b3036;
+    color: #f5f7fa;
+    text-align: center;
+    padding: 16px 20px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+

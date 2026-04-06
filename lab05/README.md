@@ -19,26 +19,26 @@
 
 1. Создала тестового пользователя c ролью Автор (для дальнейших проверок).
 
-![alt text](image.png)
+![alt text](img/image.png)
 
 2. Проверила, что у каждого администратора включены сложные пароли.
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 ### Шаг 3. Обновления ядра, тем и плагинов
 
 1. Проверила наличие обновлений для WordPress, тем и плагинов. (было одно)
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 2. Обновила темы до последних версий.
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 3. Настроила автоматические обновления для тем и плагинов (в списке со всеми просто нажала включить автоматические обновления).
-![alt text](image-4.png)
-![alt text](image-5.png)
-![alt text](image-6.png)
+![alt text](img/image-4.png)
+![alt text](img/image-5.png)
+![alt text](img/image-6.png)
 
 4. Проверила, что все обновления прошли успешно и сайт работает корректно.
-![alt text](image-7.png)
+![alt text](img/image-7.png)
 
 ### Шаг 4. Базовое hardening
 
@@ -53,10 +53,10 @@
    - Папки: `755`
    - Файлы: `644`
 
-![alt text](image-9.png)
-![alt text](image-10.png)
+![alt text](img/image-9.png)
+![alt text](img/image-10.png)
 
-![alt text](image-8.png)
+![alt text](img/image-8.png)
 
 3. Защитила `wp-config.php`, добавив в `.htaccess`:
    ```
@@ -65,19 +65,19 @@
        deny from all
    </files>
    ```
-![alt text](image-11.png)
+![alt text](img/image-11.png)
 
 Теперь при попытке открыть в браузере:
 
 http://localhost/wp_lab2/wp-config.php
 
-![alt text](image-12.png)
+![alt text](img/image-12.png)
 
 ### Шаг 5. Установка и первичная настройка All In One WP Security & Firewall (AIOS)
 
 1. Установила и активировала плагин `All In One WP Security & Firewall`.
 
-![alt text](image-13.png)
+![alt text](img/image-13.png)
 
 2. Перешла в раздел плагина в админ-панели.
 3. Настроила следующие параметры:
@@ -86,23 +86,23 @@ http://localhost/wp_lab2/wp-config.php
         - *Max Login Attempts*: `5`, 
         - *Login Retry Time Period*: `15` мин, 
         - *Lockout Time*: `30` мин.
-        ![alt text](image-14.png)
-        ![alt text](image-15.png)
+        ![alt text](img/image-14.png)
+        ![alt text](img/image-15.png)
 
       * Включила *Force Logout* (24 ч), чтобы ограничить "вечные" сессии.
-      ![alt text](image-16.png)
+      ![alt text](img/image-16.png)
 
    2. *User Accounts*:
       * Для начала пользователя с логином `admin` переименовала через AIOS в безопасный логин.
-      ![alt text](image-18.png)
+      ![alt text](img/image-18.png)
 
    3. *User Registration*:
       * Включила ручное одобрение новых пользователей, если регистрация открыта.
-      ![alt text](image-19.png)
+      ![alt text](img/image-19.png)
 
    4. *Filesystem Security*:
       * Попытка запустить проверку *File Permissions* и применила рекомендованные исправления (не делайте мирозаписываемых прав).
-      ![alt text](image-20.png)
+      ![alt text](img/image-20.png)
 
         Однако плагин определил, что сайт работает на сервере под управлением Windows, в связи с чем данная функция недоступна.
 
@@ -111,69 +111,96 @@ http://localhost/wp_lab2/wp-config.php
 
    5. *Firewall*:
       * Активировала *Basic Firewall*.
-      ![alt text](image-23.png)
+      ![alt text](img/image-23.png)
 
       * Включила защиту от *Bad Query Strings*, *XSS*, *directory browsing*.
-      ![alt text](image-21.png)
-      ![alt text](image-22.png)
-      ![alt text](image-24.png)
-      ![alt text](image-25.png)
+      ![alt text](img/image-21.png)
+      ![alt text](img/image-22.png)
+      ![alt text](img/image-24.png)
+      ![alt text](img/image-25.png)
 
    6. *Brute Force*:
-      * Включила *Rename Login Page* (измените URL входа с `/wp-login.php` на нестандартный, например `/login-<slug>`).
-        Сохраните новый URL в менеджер паролей!
-
-        http://localhost/wp_lab2/login-secure-123
-        http://localhost/wp_lab2/my-login-777
-        ![alt text](image-26.png)
+      * Включила *Rename Login Page* (изменила URL входа с `/wp-login.php` на нестандартный, например `http://localhost/wp_lab2/my-login-777`)
+        ![alt text](img/image-26.png)
    7. *Scanner / Malware*:
-      * Настройте *file change detection* (уведомления на почту).
+      * Настроила *file change detection* (уведомления на почту).
 
-      ![alt text](image-28.png)
-      ![alt text](image-29.png)
+      ![alt text](img/image-28.png)
+      ![alt text](img/image-29.png)
+
    8.  *Backup*:
-       * В секции Database создайте *резервную копию БД* (храните вне веб-корня). Настройте расписание, если доступно.
-       ![alt text](image-30.png)
-       ![alt text](image-31.png)
-   9.  *Notifications*:
-       * Включите email-уведомления для важных событий (например, lockout, новый администратор, изменение файлов).
+       * В секции Database создала *резервную копию БД*.
+       ![alt text](img/image-30.png)
+       ![alt text](img/image-31.png)
   
 ### Шаг 6. Проверка защиты от брутфорса (на тестовом пользователе)
 
-1. Выйдите из админки (или используйте приватное окно).
-2. Перейдите на *новый URL входа*, попробуйте ввести неправильный пароль 5–6 раз.
-![alt text](image-32.png)
-3. Убедитесь, что сработал *Lockdown* (блокировка IP/пользователя).
-![alt text](image-33.png)
-4. Посмотрите запись о блокировке в *WP Security → Dashboard / Logs* и (по необходимости) разблокируйте тестовый IP.
-![alt text](image-34.png)
+1. Вышла из админки.
+2. Перешла на *новый URL входа*, попробовала ввести неправильный пароль 5–6 раз.
+![alt text](img/image-32.png)
+3. Убедилась, что сработал *Lockdown* (блокировка IP/пользователя).
+![alt text](img/image-33.png)
+![alt text](img/image-34.png)
 
-![alt text](image-35.png)
+4. Посмотрела запись о блокировке в *WP Security → Dashboard / Logs* и разблокировала тестовый IP.
+![alt text](img/image-35.png)
 
-![alt text](image-36.png)
+![alt text](img/image-36.png)
 
 ### Шаг 7. Восстановление из резервной копии
 
-1. Удалите тестовую запись и одно произвольное изображение.
-![alt text](image-37.png)
-![alt text](image-38.png)
-2. Восстановите *БД* из бэкапа (импорт SQL или через плагин).
-![alt text](image-39.png)
-3. Проверьте целостность данных (восстановлено ли удалённое изображение и тестовая запись).
-![alt text](image-40.png)
-![alt text](image-41.png)
-![alt text](image-42.png)
+1. Удалила тестовую запись и одно произвольное изображение.
+![alt text](img/image-37.png)
+![alt text](img/image-38.png)
 
-дааа вернулась 
-![alt text](image-43.png)
-![alt text](image-44.png)
+2. Восстановила *БД* из бэкапа (импорт SQL или через плагин).
+![alt text](img/image-39.png)
+
+3. Проверила целостность данных (восстановлено удалённое изображение и тестовая запись).
+![alt text](img/image-40.png)
+![alt text](img/image-42.png)
+
+дааа вернулись!!
+![alt text](img/image-43.png)
+![alt text](img/image-44.png)
 
 
 ## Контрольные вопросы
 
-1. Почему `DISALLOW_FILE_EDIT` и правильные права на `wp-config.php` существенно уменьшают риск пост-эксплойта?
-2. Какие параметры Login Lockdown/Firewall вы выбрали и почему именно такие (обоснуйте баланс безопасности и UX)?
-3. Чем отличаются меры защиты на уровне WordPress (плагин/WAF) от мер на уровне веб-сервера и ОС?
-4. Что обязательно включать в "полный" бэкап WP и как вы проверяете, что восстановление действительно работает?
+### 1. Почему `DISALLOW_FILE_EDIT` и права на `wp-config.php` важны?
 
+`DISALLOW_FILE_EDIT` отключает встроенный редактор файлов в админке, поэтому даже при взломе злоумышленник не сможет быстро внедрить вредоносный код через панель WordPress.
+Ограниченные права на `wp-config.php` защищают критичные данные (логин/пароль БД, ключи безопасности), снижая риск их кражи или изменения. В итоге уменьшается вероятность развития атаки после первичного взлома (post-exploit).
 
+### 2. Какие параметры Login Lockdown/Firewall выбраны и почему?
+
+Были включены:
+
+* ограничение попыток входа (например, 3–5 попыток),
+* временная блокировка IP,
+* переименование страницы входа,
+* базовый firewall + защита от XSS и bad query.
+
+Это даёт баланс:
+- защита от перебора и автоматических атак
+- при этом обычный пользователь не блокируется слишком быстро и может нормально войти.
+
+### 3. Разница между защитой WP и уровнем сервера/ОС
+
+* **WordPress (плагины, WAF)** — работает на уровне приложения: защита входа, фильтрация запросов, контроль пользователей.
+* **Веб-сервер (.htaccess, nginx)** — блокирует запросы ещё до WordPress (например, запрет доступа к файлам).
+* **ОС** — самый низкий уровень: права доступа, процессы, сеть.
+ Чем ниже уровень — тем раньше останавливается атака.
+
+### 4. Что входит в полный бэкап и как проверить восстановление?
+
+Полный бэкап включает:
+
+* базу данных (посты, пользователи, настройки),
+* файлы сайта (themes, plugins, uploads).
+
+Проверка:
+
+1. удалить часть данных (запись/файл),
+2. выполнить восстановление,
+3. убедиться, что данные вернулись и сайт работает корректно.
